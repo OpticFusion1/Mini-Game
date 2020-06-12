@@ -1,0 +1,12 @@
+Entrance;0; You finally arrived at the front of the dungeon. You can only move forward from here;1;0;0;0;No win;
+Castle;1;You walk forward. You can barely see anything through the thick mist and gloom. You can just barely make out a pit in front of you and the sound of water. "Hahaha" you hear. a mysterious voice full of malice. "You'll never get her from me." Suddenly, A pillar of flame shoots out towards you. In a flash, you see dark entrances to your right and left. You can dodge to the "left" or "right" or test your luck by jumping "forward" into the pit;5;0;3;2;No win;
+Cave;2;Crawling through a cave You see an exit. You can go back or do nothing;0;1;0;0;win;
+Plant Master;3;A dense forest springs into view but a mass of vines latches onto your jacket from behind. You turn and see a giant rosebush lumbering towards you. Its slow though... You can go "north" or back;4;1;0;0;No win;
+Dungeon Master;4;He its on his makeshift thrown waiting for you. You ready yourself for battle. You can go "back";0;3;0;0;win;
+Underwater Maze;5;You find yourself underwater! A little too much water for a meagre puddle... Suddenly the world turns red and you surface in an underground complex. the floor is literally lava but there's a path forward through the lava pit. You can move "forward" or "backwards";6;1;0;0;No win;
+Lava Pits;6; Jumping on blocks of obsidian, you make it past the lava. You see her tied up looking quite bored. So ungrateful, but this is life. You pick her up like a sack of flour and go on your way.;0;5;0;0;win
+
+
+
+
+
