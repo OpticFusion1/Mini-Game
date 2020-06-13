@@ -23,15 +23,9 @@ public class Map {
         System.out.println("You have dared to enter");
         System.out.println("So tenacious... there are only four ways you can move: North, South, East, West. Type in n,s,e, or w to replicate those cardinal directions.");
 
-         while(go){
+         do{
             System.out.println("You are currently at "+ starter.getName());
             System.out.println(starter.toString());
-
-            if(starter.getWin()){
-                 System.out.println("Congratulations, you found a way out");
-                 break;
-             }
-
             System.out.println("Where do you want to go? If you dont care about saving her anymore, press X on your keyboard");
             direction = sc.nextLine();
             if(direction.toLowerCase().equals("x")){
@@ -44,8 +38,23 @@ public class Map {
             }
             else
                 starter = All.get(index);
-
+                 if(starter.getWin() && index!=6){
+                     System.out.println(starter.toString());
+                     System.out.println("Congratulations, you found a way out but this isn't where the princess is.");
+                     System.out.println("Choose a direction to go back.");
+                     //create a way to exit from here.
+                     direction = sc.nextLine();
+                     index = starter.directions(direction);
+                     starter = All.get(index);
+                 }
+                 else if(starter.getWin()){
+                     System.out.println(starter.toString());
+                     System.out.println("You got her out! Great work!");
+                 }
 
         }
+         while(!starter.getWin());
+
+
     }
 }

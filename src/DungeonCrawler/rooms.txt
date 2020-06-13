@@ -1,4 +1,4 @@
-Entrance;0; You finally arrived at the front of the dungeon. You can only move forward from here;1;0;0;0;No win;
+Entrance;0;You finally arrived at the front of the dungeon. You can only move forward from here;1;0;0;0;No win;
 Castle;1;You walk forward. You can barely see anything through the thick mist and gloom. You can just barely make out a pit in front of you and the sound of water. "Hahaha" you hear. a mysterious voice full of malice. "You'll never get her from me." Suddenly, A pillar of flame shoots out towards you. In a flash, you see dark entrances to your right and left. You can dodge to the "left" or "right" or test your luck by jumping "forward" into the pit;5;0;3;2;No win;
 Cave;2;Crawling through a cave You see an exit. You can go back or do nothing;0;1;0;0;win;
 Plant Master;3;A dense forest springs into view but a mass of vines latches onto your jacket from behind. You turn and see a giant rosebush lumbering towards you. Its slow though... You can go "north" or back;4;1;0;0;No win;
