@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Map {
 
-
-
+     int index;
+    String direction;
 
     public void run(String text) throws FileNotFoundException {
-        boolean go = true;
+
         Create dungeon1 = new Create();
 
         dungeon1.createRooms(text);
@@ -17,9 +17,10 @@ public class Map {
         Scanner sc = new Scanner(System.in);
 
         ArrayList<Room> All = dungeon1.getAllRooms();
+
         Room starter = All.get(0);
-        String direction;
-        int index;
+
+        Tracker track1 = new Tracker();
         System.out.println("You have dared to enter");
         System.out.println("So tenacious... there are only four ways you can move: North, South, East, West. Type in n,s,e, or w to replicate those cardinal directions.");
 
@@ -32,7 +33,8 @@ public class Map {
                 System.out.println("You have failed and disappointed everyone...");
                 break;
             }
-            index = starter.directions(direction);
+            index = starter.directions(direction);//A direction from the user converted into a int. These ints are indexes to other rooms
+             track1.setVisited(index); //stores the index of a room here.
             if(index == 0) {
                 System.out.println("Its impossible to move here. Choose a different route.");
             }
@@ -45,6 +47,7 @@ public class Map {
                      //create a way to exit from here.
                      direction = sc.nextLine();
                      index = starter.directions(direction);
+                     track1.setVisited(index);
                      starter = All.get(index);
                  }
                  else if(starter.getWin()){
