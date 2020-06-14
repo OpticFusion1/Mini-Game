@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Start {
 
-    public static void main(String[] args) throws FileNotFoundException{
+    public static void main(String[] args){
         Map game = new Map();
         System.out.println("Welcome to Dungeon Crawler 3. If you want to play, type (y). Otherwise type (n)");
         Scanner sc = new Scanner(System.in);
@@ -13,15 +13,13 @@ public class Start {
         ans = ans.toLowerCase();
 
 
-        try {
+
             if (ans.equals("n")) {
                 System.out.println("goodbye");
             } else if (ans.equals("y")) {
-                game.run("src/DungeonCrawler/rooms.txt");
+                game.run("src/DungeonCrawler/rooms.txt", "src/DungeonCrawler/Items.txt");
             }
-        }
-        catch(FileNotFoundException ex){
-            System.out.println("Somethings missing, the adventure cannot start without some information");
-        }
+
+
     }
 }

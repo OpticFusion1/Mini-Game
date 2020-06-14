@@ -2,25 +2,29 @@ package DungeonCrawler;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 public class Map {
-
-     int index;
+    Random rand = new Random();
+    int index;
     String direction;
+    Create dungeon1 = new Create();
+    Scanner sc = new Scanner(System.in);
 
-    public void run(String text) throws FileNotFoundException {
+    //Tracker track1 = new Tracker();
+    Player player = new Player();
+    Room starter;
+    ArrayList<Room> All;
+    ArrayList<Item> items;
+    ArrayList<Integer> itemIndexes;
 
-        Create dungeon1 = new Create();
 
-        dungeon1.createRooms(text);
+    public void run(String room, String item) {
+        dungeon1.createRooms(room, item);
+          this.All = dungeon1.getAllRooms();
+          this.items = dungeon1.getAllItems();
 
-        Scanner sc = new Scanner(System.in);
-
-        ArrayList<Room> All = dungeon1.getAllRooms();
-
-        Room starter = All.get(0);
-
-        Tracker track1 = new Tracker();
+        this.starter = All.get(0);
         System.out.println("You have dared to enter");
         System.out.println("So tenacious... there are only four ways you can move: North, South, East, West. Type in n,s,e, or w to replicate those cardinal directions.");
 
@@ -34,7 +38,7 @@ public class Map {
                 break;
             }
             index = starter.directions(direction);//A direction from the user converted into a int. These ints are indexes to other rooms
-             track1.setVisited(index); //stores the index of a room here.
+             player.setVisited(index); //stores the index of a room here.
             if(index == 0) {
                 System.out.println("Its impossible to move here. Choose a different route.");
             }
@@ -47,7 +51,7 @@ public class Map {
                      //create a way to exit from here.
                      direction = sc.nextLine();
                      index = starter.directions(direction);
-                     track1.setVisited(index);
+                     player.setVisited(index);
                      starter = All.get(index);
                  }
                  else if(starter.getWin()){
@@ -60,4 +64,23 @@ public class Map {
 
 
     }
+
+    public void look(){
+        System.out.println("You look around and see these sights..."); //not done yet. need to add the item method for description
+        System.out.println(starter.toString());
+    }
+
+    public void itemGenerator(ArrayList rooms){
+        int i = 0;
+        int limit = items.size();
+        this.itemIndexes.add(-1); //first location will never have an item
+        while(i<= rooms.size()){
+            this.itemIndexes.add(rand.nextInt(limit));
+            i++;
+        }
+
+
+    }
+
+
 }

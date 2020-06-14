@@ -1,16 +1,17 @@
 package DungeonCrawler;
 
-import org.w3c.dom.ls.LSOutput;
 
-import java.util.ArrayList;
 
-public class Room {
+
+
+public class Room  {
 
     private String name;
     private int number;
     private String description;
     int N, S, E ,W;
     private boolean win;
+    Item item;
 
     //static int count;
     public Room(){

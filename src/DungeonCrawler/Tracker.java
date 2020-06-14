@@ -2,17 +2,20 @@ package DungeonCrawler;
 
 import java.util.ArrayList;
 
-public class Tracker extends Create {
-  private ArrayList<Integer> visited = new ArrayList<>();
+public class Tracker extends Player {
+  protected ArrayList<Integer> items = new ArrayList<>();
 
-    public ArrayList<Integer> getVisited() {
-        return visited;
+    public ArrayList<Integer> getItems() {
+        return items;
     }
 
    //This will add the index of the rooms to an array to track an instance of the game rooms visited
+   @Override
     public void setVisited(int index) {
-        this.visited.add(index);
+        this.items.add(index);
     }
+
+
 
 
 }
