@@ -1,5 +1,6 @@
 # Mini-Game
 Mini text game in java
+
 Author: Nathaniel Bannis
 
 <img src="https://user-images.githubusercontent.com/20198161/84615683-a6cd7980-ae97-11ea-8904-079547109333.jpg" width="45%"></img> 
