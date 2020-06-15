@@ -2,7 +2,8 @@ package DungeonCrawler;
 
 
 
-
+import java.sql.Array;
+import java.util.ArrayList;
 
 public class Room  {
 
@@ -97,6 +98,15 @@ public class Room  {
         }*/
         return description;
 
+    }
+
+    public ArrayList<Integer> getExits(){
+        ArrayList<Integer> exit = new ArrayList<>();
+        exit.add(getN());
+        exit.add(getS());
+        exit.add(getE());
+        exit.add(getW());
+        return exit;
     }
 
 

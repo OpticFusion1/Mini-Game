@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Read {
-
+    private final static int MAX_WIDTH = 80; //length of the string in console window
     String rStr;
     String iStr;
 
@@ -58,7 +58,7 @@ public class Read {
             number=room.next();
             int ID = Integer.parseInt(number);
             description =room.next();
-
+            description = wrap(description);
             int north =Integer.parseInt(room.next());
             int south  = Integer.parseInt(room.next());
             int east  = Integer.parseInt(room.next());
@@ -96,6 +96,7 @@ public class Read {
         while(item.hasNext()){
             name=item.next();
             description=item.next();
+            description = wrap(description);
             i =  new Item(name,description);
         }
         item.close();
@@ -104,5 +105,30 @@ public class Read {
 
     public ArrayList<Item> getThings() {
         return things;
+    }
+
+
+
+    public String wrap(String longString) {
+        String[] splittedString = longString.split(" ");
+        StringBuilder resultString = new StringBuilder();
+        StringBuilder lineString = new StringBuilder();
+
+        for (int i = 0; i < splittedString.length; i++) {
+            if (lineString.length() == 0) {
+                lineString.append(splittedString[i]).append(" ");
+            } else if (lineString.length() + splittedString[i].length() < MAX_WIDTH) {
+                lineString.append(splittedString[i]).append(" ");
+            } else {
+                resultString.append(lineString).append(splittedString[i]).append("\n");
+                lineString = new StringBuilder();
+            }
+        }
+
+        if(lineString.length() > 0){
+            resultString.append(lineString).append("\n");
+        }
+
+        return resultString.toString();
     }
 }
